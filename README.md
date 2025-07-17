@@ -4,11 +4,6 @@ This is a React-based form application featuring live validation, data persisten
 
 ---
 
-## 🔗 Live Demo
-
-Check out the live version of the app here:  
-👉 [https://form-app-three-sandy.vercel.app/](https://form-app-three-sandy.vercel.app/)
-
 ## ✨ Features
 
 ### ✅ Form Fields
@@ -122,3 +117,9 @@ This app is deployed using **Vercel**. If you're deploying your own version:
 ## 📬 Contact
 
 For any questions or feedback, feel free to reach out!
+
+---
+
+## 🌐 Live Demo
+
+[Click here to view the deployed app](https://form-app-three-sandy.vercel.app/)

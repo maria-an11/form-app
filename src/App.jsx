@@ -59,12 +59,7 @@ export default function App() {
         )
         .required("Required"),
     }),
-    // onSubmit: (values, { resetForm }) => {
-    //   setShowToast(true);
-    //   localStorage.removeItem(STORAGE_KEY);
-    //   resetForm();
-    //   setTimeout(() => setShowToast(false), 3000);
-    // },
+
     onSubmit: async (values, { resetForm }) => {
       try {
         const response = await fetch("/api/submit", {
