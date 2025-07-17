@@ -1,70 +1,119 @@
-# Getting Started with Create React App
+# 📝 React Form App with Toast Notification, Theme Toggle, and Validation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React-based form application featuring live validation, data persistence, dark mode toggle, animated toast notifications, and backend integration via Vercel Serverless Functions.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## ✨ Features
 
-### `npm start`
+### ✅ Form Fields
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **First Name**
+- **Last Name**
+- **Age** (must be a positive integer)
+- **Address**
+- **Place of Work**
+- **Job Title**
+- **Phone Number**
+- **LinkedIn URL** (must be a valid link in the format `linkedin.com/in/...`)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🌒 Dark Mode Toggle
 
-### `npm test`
+- Toggle between light and dark themes.
+- User preference is saved in `localStorage`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 📂 Data Persistence
 
-### `npm run build`
+- Form data is auto-saved to `localStorage` on change.
+- If the page reloads or the user navigates away, progress is not lost.
+- Upon successful submission, localStorage is cleared.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🚀 Animated Toast Notification
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Upon successful submission, a centered toast fades in and then slides out to the right.
+- The toast message auto-dismisses after 3 seconds.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🛄 Backend Submission
 
-### `npm run eject`
+- Form data is submitted via a [Vercel Serverless Function](https://vercel.com/docs/functions).
+- Error handling included (e.g., alerts user if submission fails).
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 🔍 Validation with Yup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- All fields are validated using [Yup](https://github.com/jquense/yup).
+- Real-time error messages shown under each input on blur or submit.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+### 💡 Light Mode
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Light Mode](screenshots/light-mode.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 🌙 Dark Mode
 
-### Code Splitting
+![Dark Mode](screenshots/dark-mode.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### ⚠️ Error Message Example
 
-### Analyzing the Bundle Size
+![Error Message](screenshots/error-message.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🛠 Tech Stack
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **React**
+- **Formik** for form state management
+- **Yup** for validation
+- **CSS Modules** for styling and animations
+- **Vercel Serverless Functions** for backend submission
+- **localStorage** for data persistence
+- **Custom Toast Notification** (CSS animated)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📁 Folder Structure
 
-### Deployment
+```
+form-app/
+├── public/
+│   └── ...
+├── src/
+│   ├── App.jsx
+│   ├── App.css
+│   └── ...
+├── api/
+│   └── submit.js
+├── screenshots/
+│   ├── light-mode.png
+│   ├── dark-mode.png
+│   └── error-message.png
+├── package.json
+└── README.md
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 🔄 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This app is deployed using **Vercel**. If you're deploying your own version:
+
+1. Push your project to a GitHub repo.
+2. Connect the repo to Vercel.
+3. Ensure `api/submit.js` is picked up as a Serverless Function.
+4. Update any environment variables if needed.
+
+---
+
+## 🔐 Notes
+
+- Toast and theme logic is handled purely on the frontend.
+- The form will only reset when the submission is **successful**.
+- The app uses semantic HTML and basic accessibility best practices.
+
+---
+
+## 📬 Contact
+
+For any questions or feedback, feel free to reach out!
